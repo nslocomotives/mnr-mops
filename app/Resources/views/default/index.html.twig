@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+	  {% set cart = sylius_cart_get() %}
+	  Current cart totals: {{ cart.total }} for {{ cart.totalItems }} items!
+                
+	<h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+        <hr>
+	
+	<p>This is where your application is going to be built.</p>
+
+        </div>
+    </div>
+{% endblock %}
+

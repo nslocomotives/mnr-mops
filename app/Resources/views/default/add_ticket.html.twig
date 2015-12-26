@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+	  {% set cart = sylius_cart_get() %}
+	  Current cart totals: {{ cart.total }} for {{ cart.totalItems }} items!
+                
+        <h1> Add a ticket </h1>
+        <hr>
+	{{ form_start(form) }}
+    	{{ form_errors(form) }}
+
+    	{{ form_row(form.name) }}
+	{{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+

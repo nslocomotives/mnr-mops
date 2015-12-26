@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+	  {% set cart = sylius_cart_get() %}
+	  Current cart totals: {{ cart.total }} for {{ cart.totalItems }} items!
+                
+	<h1>Tickets Available</h1>
+        <hr>
+	
+	<p>List your tickets here:-)</p>
+	{% if ticketList is empty %}
+      <p> there are no tickets for sale... </p>
+    {% else %}
+      {% for tickets in ticketList %}
+    	<li>{{ Name }}: {{ Description }}</li>
+	  {% endfor %}
+	{% endif %}
+        </div>
+    </div>
+{% endblock %}
+
